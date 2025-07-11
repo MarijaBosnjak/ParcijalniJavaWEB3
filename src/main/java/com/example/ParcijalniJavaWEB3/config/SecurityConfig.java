@@ -44,8 +44,8 @@ public class SecurityConfig {
                         .requestMatchers("/api/v1/**", "/program-obrazovanja/**").authenticated()
                         .requestMatchers("/api/v1/**", "/upisi/**").authenticated())
                 .sessionManagement((session) -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-                .authenticationProvider(authenticationProvider())
-                .addFilterBefore(JwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
+                .authenticationProvider(authenticationProvider());
+               // .addFilterBefore(JwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
         return http.build();
     }
 
